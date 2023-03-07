@@ -2,6 +2,8 @@ package aksoftdev.billitest.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
@@ -20,7 +22,7 @@ public class ClientRegisterRequest {
 
     @NotNull(message = "Last name should be not null")
     @Size(min = 2,max = 30)
-    private String lastname;
+    private String lastName;
 
     @Email(message = "Email should be valid")
     @NotBlank(message = "Email should not be empty")

@@ -15,12 +15,14 @@ public class SwaggerConfig {
 
     private static final String API_KEY = "Bearer Token";
 
+
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI().components(new Components().addSecuritySchemes(API_KEY, apiKeySecuritySchema()))
                 .info(new Info().title("Billitest"))
                 .security(Collections.singletonList(new SecurityRequirement().addList(API_KEY)));
     }
+
 
     private SecurityScheme apiKeySecuritySchema() {
         return new SecurityScheme().name("Authorization")
